@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D3B5F5CD-7BBA-40C7-B64D-2F92FEE1E287}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SparkArc.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\examples\Font.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\examples\Music.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\examples\Sample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\examples\Bitmap.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\examples\Viewport.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SparkArc">
+        <MSBuild Projects="SparkArc.dproj"/>
+    </Target>
+    <Target Name="SparkArc:Clean">
+        <MSBuild Projects="SparkArc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SparkArc:Make">
+        <MSBuild Projects="SparkArc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Font">
+        <MSBuild Projects="..\examples\Font.dproj"/>
+    </Target>
+    <Target Name="Font:Clean">
+        <MSBuild Projects="..\examples\Font.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Font:Make">
+        <MSBuild Projects="..\examples\Font.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Music">
+        <MSBuild Projects="..\examples\Music.dproj"/>
+    </Target>
+    <Target Name="Music:Clean">
+        <MSBuild Projects="..\examples\Music.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Music:Make">
+        <MSBuild Projects="..\examples\Music.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Sample">
+        <MSBuild Projects="..\examples\Sample.dproj"/>
+    </Target>
+    <Target Name="Sample:Clean">
+        <MSBuild Projects="..\examples\Sample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Sample:Make">
+        <MSBuild Projects="..\examples\Sample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Bitmap">
+        <MSBuild Projects="..\examples\Bitmap.dproj"/>
+    </Target>
+    <Target Name="Bitmap:Clean">
+        <MSBuild Projects="..\examples\Bitmap.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Bitmap:Make">
+        <MSBuild Projects="..\examples\Bitmap.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Viewport">
+        <MSBuild Projects="..\examples\Viewport.dproj"/>
+    </Target>
+    <Target Name="Viewport:Clean">
+        <MSBuild Projects="..\examples\Viewport.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Viewport:Make">
+        <MSBuild Projects="..\examples\Viewport.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SparkArc;Font;Music;Sample;Bitmap;Viewport"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SparkArc:Clean;Font:Clean;Music:Clean;Sample:Clean;Bitmap:Clean;Viewport:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SparkArc:Make;Font:Make;Music:Make;Sample:Make;Bitmap:Make;Viewport:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

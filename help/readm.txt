@@ -1,0 +1,6 @@
+NOTE: All the examples depend on Data. arc therefore you will need to build it before you can run any example
+
+1. Load the project group file from the [sources] folder
+2. Build SparkArc project
+3. Run makearc.bat, this will build Data. arc
+4. Build an run the examples
