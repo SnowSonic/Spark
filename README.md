@@ -146,7 +146,7 @@ end;
 ```
 To run your game, call
 ```pascal
-RunRun(TMyGame);
+RunGame(TMyGame);
 ```
 **NOTE:** For Spark to work properly, execution MUST start with `RunGame(...)`. This call will property setup/shutdown the library and log and handle errors. Only one Spark app instance is allowed to run and will safely terminated if more than one is detected.
 
